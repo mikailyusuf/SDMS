@@ -5,7 +5,6 @@ from django.db import models
 # Create your models here.
 
 class Students(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     first_name = models.CharField(max_length=200, null=False)
     last_name = models.CharField(max_length=200, null=False)
     phone = models.CharField(max_length=200, null=True)
@@ -18,7 +17,9 @@ class Students(models.Model):
 
 
 class Teachers(models.Model):
-    first_name = models.CharField(max_length=200, null=False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    username = models.CharField(max_length=100,null=True)
+    first_name = models.CharField(max_length=200, null=True)
     last_name = models.CharField(max_length=200, null=False)
     phone = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
@@ -30,37 +31,48 @@ class Teachers(models.Model):
 
 
 class Result(models.Model):
-    student = models.ForeignKey(Students, null=False, on_delete=models.SET_NULL)
+    student = models.ForeignKey(Students, null=True, on_delete=models.SET_NULL)
 
     math_exan = models.FloatField(null=True)
     math_test = models.FloatField(null=True)
     math_total = models.FloatField(null=True)
+    math_grade = models.CharField(max_length=10,null=False)
 
     eng_exan = models.FloatField(null=True)
     eng_test = models.FloatField(null=True)
     eng_total = models.FloatField(null=True)
+    eng_grade = models.CharField(max_length=10,null=False)
+
 
 
     physics_exan = models.FloatField(null=True)
     physics_test = models.FloatField(null=True)
     physics_total = models.FloatField(null=True)
+    physics_grade = models.CharField(max_length=10,null=False)
+
 
     bio_exan = models.FloatField(null=True)
     bio_test = models.FloatField(null=True)
     bio_total = models.FloatField(null=True)
+    bio_grade = models.CharField(max_length=10,null=False)
+
 
     chem_exan = models.FloatField(null=True)
     chem_test = models.FloatField(null=True)
     chem_total = models.FloatField(null=True)
+    chem_grade = models.CharField(max_length=10,null=False)
+
 
     agric_exan = models.FloatField(null=True)
     agric_test = models.FloatField(null=True)
     agric_total = models.FloatField(null=True)
+    agric_grade = models.CharField(max_length=10,null=False)
+
 
     civic_exan = models.FloatField(null=True)
     civic_test = models.FloatField(null=True)
     civic_total = models.FloatField(null=True)
-
+    civic_grade = models.CharField(max_length=10,null=False)
 
     comment = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True, null=True, blank=True)

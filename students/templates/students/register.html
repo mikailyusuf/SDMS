@@ -11,14 +11,22 @@
 <body>
 
 
-<form action="register.php" method="post">
+<form   action=""  method="POST">
 
+    {% csrf_token%}
 
-    <input type="text" placeholder="NAME" name="name" required>
-    <input type="email" placeholder="EMAIL" name="email" required>
-    <input type="text" placeholder="ID NUMBER" name="idnumber" required>
-    <input type="number" placeholder="PHONE NUMBER" name="contact" required>
-    <input type="password" placeholder="PASSWORD" name="password" required>
+<!--    {{ form }}-->
+    {{form.username}}
+    {{form.email}}
+    {{form.first_name}}
+    {{form.last_name}}
+    {{form.password1}}
+    {{form.password2}}
+<!--    <input type="text" placeholder="Username" name="username" required>-->
+<!--    <input type="email" placeholder="EMAIL" name="email" required>-->
+<!--&lt;!&ndash;    <input type="text" placeholder="ID NUMBER" name="email" required>&ndash;&gt;-->
+<!--    <input type="password" placeholder="PHONE NUMBER" name="password1" required>-->
+<!--    <input type="password" placeholder="PASSWORD" name="password2" required>-->
     <input type="submit" value="REGISTER" name="submit" class="register">
 
 
