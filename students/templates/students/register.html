@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static '/css/register.css' %}">
+    <title>SIGN UP</title>
+</head>
+<body>
+
+
+<form action="register.php" method="post">
+
+
+    <input type="text" placeholder="NAME" name="name" required>
+    <input type="email" placeholder="EMAIL" name="email" required>
+    <input type="text" placeholder="ID NUMBER" name="idnumber" required>
+    <input type="number" placeholder="PHONE NUMBER" name="contact" required>
+    <input type="password" placeholder="PASSWORD" name="password" required>
+    <input type="submit" value="REGISTER" name="submit" class="register">
+
+
+</form>
+
+</body>
+</html>

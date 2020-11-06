@@ -1,0 +1,91 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   background-image: url(register3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+     /*  */
+}
+
+.h{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: crimson;
+
+}
+
+header
+{
+    display: flex;
+   justify-content: center;
+    align-items: center;
+    padding: 20px 0%;
+    height: 50px;
+    background: #ecf0f1;
+
+}
+
+ul
+{
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 100;
+
+}
+
+ul li{
+    display: inline-block;
+    padding: 10px 20px;
+
+}
+
+ul li a
+{
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    height: 20px;
+
+
+}
+
+ul li a:hover{
+background-color: #3498db;
+}
+
+
+form
+{
+
+position: absolute;
+left: 70%;
+top: 20%;
+
+}
+form input
+{
+  width: 90%;
+   padding: 20px 0px;
+   margin-top: 10px;
+   border: none;
+   border-bottom: 1px solid #1abc9c;
+   overflow: hidden;
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 20px;
+   outline: none;
+   background: #bdc3c7;
+   color: black;
+}
+
+.register
+{
+    background-color: #e74c3c;
+}
+
+.register:hover
+{
+    background-color: crimson;
+}
