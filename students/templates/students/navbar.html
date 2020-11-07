@@ -1,29 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">SDMS</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">STUDENTS</a>
+        <a class="nav-link" href="#">Students</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Teachers</a>
-      </li>
-      <li class="nav-item dropdown">
+       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown link
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="{% url 'signout'%}">Sign Out</a>
+             <a class="dropdown-item" href="#">Register Student</a>
+{% if request.user.groups.all.0.name == 'admin' %}
+
+          <a class="dropdown-item" href="">Register Teacher</a>
+          <a class="dropdown-item" href="{% url 'signup'%}">Register Admin</a>
+          {% endif%}
+
         </div>
       </li>
     </ul>
+    <span class="navbar-text">
+      Welcome {{ request.user }}
+    </span>
   </div>
 </nav>

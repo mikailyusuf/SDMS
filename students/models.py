@@ -30,8 +30,23 @@ class Teachers(models.Model):
         return self.email
 
 
-class Result(models.Model):
+class Results(models.Model):
     student = models.ForeignKey(Students, null=True, on_delete=models.SET_NULL)
+
+    TERM = (
+        ('fist_term', 'FIRST TERM'),
+        ('second_term', 'SECOND TERM'),
+        ('third_term', 'THIRD TERM'),
+        )
+
+    SESSION = (
+        ('2019/2020', '2019/2020'),
+        ('2020/2021', '2020/2021'),
+        ('2021/2022', '2021/2022'),
+    )
+    term = models.CharField(max_length=100, choices=TERM)
+    session = models.CharField(max_length=100, choices=SESSION)
+
 
     math_exan = models.FloatField(null=True)
     math_test = models.FloatField(null=True)

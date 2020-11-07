@@ -1,14 +1,12 @@
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
-from django.shortcuts import render
-
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from students.forms import CreateUserForm
 from students.models import Teachers
-
-
-def login(request):
-    return render(request, 'students/login.html')
 
 
 def signup(request):
@@ -31,17 +29,31 @@ def signup(request):
             )
             print(user)
             print(username + "User Registered")
-
-    # print(request)
-    # print(request.email)
-    # print(request.idnumber)
-    # print(request.password)
-    # print(request.contact)
     context = {'form': form}
-    return render(request, 'students/register.html',context)
+    return render(request, 'students/register.html', context)
+
+
+def loginPage(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.info(request, 'Username OR password is incorrect')
+    return render(request, 'students/login.html')
+
+
+def signout(request):
+    logout(request)
+    return HttpResponseRedirect('login')
+
 
 def home(request):
     return render(request, 'students/home.html')
+
 
 def createUser(request):
     form = CreateUserForm()

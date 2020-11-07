@@ -16,12 +16,15 @@
     {% csrf_token%}
 
 <!--    {{ form }}-->
-    {{form.username}}
-    {{form.email}}
-    {{form.first_name}}
-    {{form.last_name}}
-    {{form.password1}}
-    {{form.password2}}
+    Username {{form.username}}
+    <label for="email"> Email    {{form.email}}</label>
+    <label for="first_name"> First Name </label> {{form.first_name}}
+    <label for=""> Last Name  {{form.last_name}} </label>
+    <label for=""> Password  {{form.password1}}</label>
+    <label for=""> Confirm Password {{form.password2}} </label>
+
+    {{form.errors}}
+
 <!--    <input type="text" placeholder="Username" name="username" required>-->
 <!--    <input type="email" placeholder="EMAIL" name="email" required>-->
 <!--&lt;!&ndash;    <input type="text" placeholder="ID NUMBER" name="email" required>&ndash;&gt;-->

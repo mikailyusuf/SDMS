@@ -61,14 +61,14 @@ form
 {
 
 position: absolute;
-left: 70%;
+left: 50%;
 top: 20%;
 
 }
 form input
 {
-  width: 90%;
-   padding: 20px 0px;
+  width: 60%;
+   padding: 10px 0px;
    margin-top: 10px;
    border: none;
    border-bottom: 1px solid #1abc9c;
