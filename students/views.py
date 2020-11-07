@@ -51,7 +51,7 @@ def signout(request):
     return HttpResponseRedirect('login')
 
 
-def home(request):
+def studentRecord(request):
     if request.method == 'POST':
         maths_test = request.POST['maths_test']
         maths_exam = request.POST['maths_exam']
@@ -83,7 +83,14 @@ def home(request):
         print( "Comment :" + comment )
 
 
+    return render(request, 'students/StudentRecord.html')
+
+def home(request):
+
+
     return render(request, 'students/home.html')
+
+
 
 
 def createUser(request):
@@ -105,6 +112,14 @@ def calculateTotal(test,exam):
     return total
 
 def grade(total):
-    if (total>70):
+    if total >= 70:
         grade = 'A'
-    elif (total > 60 and
+    elif total >= 60:
+        grade = 'B'
+    elif total >= 50:
+        grade = 'C'
+    elif total >= 45:
+        grade = 'D'
+    else:
+        grade = 'F'
+    return grade

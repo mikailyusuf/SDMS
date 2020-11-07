@@ -12,24 +12,29 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Students</a>
       </li>
+
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown link
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="{% url 'signout'%}">Sign Out</a>
-             <a class="dropdown-item" href="#">Register Student</a>
+          <a class="dropdown-item" href="{% url 'record'%}">Add new Record</a>
+             <a class="dropdown-item" href="{% url 'home'%}">Register Student</a>
 {% if request.user.groups.all.0.name == 'admin' %}
 
           <a class="dropdown-item" href="">Register Teacher</a>
           <a class="dropdown-item" href="{% url 'signup'%}">Register Admin</a>
           {% endif%}
+                      <a class="dropdown-item" href="{% url 'signout'%}">Sign Out</a>
+
 
         </div>
       </li>
     </ul>
     <span class="navbar-text">
-      Welcome {{ request.user }}
+      Welcome {{ request.user}}
     </span>
   </div>
 </nav>
+
+
