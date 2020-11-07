@@ -52,6 +52,37 @@ def signout(request):
 
 
 def home(request):
+    if request.method == 'POST':
+        maths_test = request.POST['maths_test']
+        maths_exam = request.POST['maths_exam']
+        session = request.POST['session']
+        term = request.POST['term']
+        eng_test = request.POST['eng_test']
+        eng_exam = request.POST['eng_exam']
+        bio_test = request.POST['bio_test']
+        bio_exam = request.POST['bio_exam']
+        chem_test = request.POST['chem_test']
+        chem_exam = request.POST['chem_exam']
+        civic_test = request.POST['civic_test']
+        civic_exam = request.POST['civic_exam']
+        agric_test = request.POST['agric_test']
+        agric_exam = request.POST['agric_exam']
+        phy_test = request.POST['phy_test']
+        phy_exam = request.POST['phy_exam']
+        comment = request.POST['comment']
+
+        print(" Session :" + session)
+        print("Term :" + term)
+        print( "Maths :" + maths_test +":" + maths_exam)
+        print( "English :" + eng_test +":" + eng_exam)
+        print( "Physics :" + phy_test +":" + phy_exam)
+        print( "Biology :" + bio_test +":" + bio_exam)
+        print( "Chemistry :" + chem_test +":" + chem_exam)
+        print( "Civic Education :" + civic_test +":" + civic_exam)
+        print( "Agric :" + agric_test +":" + agric_exam)
+        print( "Comment :" + comment )
+
+
     return render(request, 'students/home.html')
 
 
@@ -67,3 +98,13 @@ def createUser(request):
             user.groups.add(group)
         # Teachers.objects.create(
         # user = user,first_name = )
+
+
+def calculateTotal(test,exam):
+    total = test+exam
+    return total
+
+def grade(total):
+    if (total>70):
+        grade = 'A'
+    elif (total > 60 and

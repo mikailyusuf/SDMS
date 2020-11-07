@@ -3,9 +3,14 @@
 
 
 <style>
-    label{
+   form{
+   margin-top:40px;
+   }
 
-    }
+   #btn{
+   background-color: #0080ff;
+   }
+
 
 
 
@@ -17,79 +22,116 @@
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text">Mathematics</span>
+                <span class="input-group-text">Choose a Session:</span>
             </div>
-            <input class="form-control" id="maths" name="" placeholder="Test" type="number" size="4" maxlength="30">
+            <select name="session" id="session" class="form-control" >
+                <option value="2019/2020">2019/2020</option>
+                <option value="2020/2021">2020/2021</option>
+                <option value="2021/2022">2021/2022</option>
+            </select>
 
-            <input autocomplete="off" class="form-control" name="box2" placeholder="Exams" type="number">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Choose Term</span>
+            </div>
+            <select name="term" id="term" class="form-control" >
+                <option value="First Term">First Term</option>
+                <option value="Second Term">Second Term</option>
+                <option value="Third Term">Third Term</option>
+            </select>
+
 
         </div>
 
-          <div class="input-group mb-3">
+<!--        maths-->
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">Mathematics</span>
             </div>
-            <input class="form-control" id="maths" name="" placeholder="Test" type="number" size="4" maxlength="30">
+            <input class="form-control" id="maths" name="maths_test" placeholder="Test" type="number" size="4" maxlength="30">
 
-            <input autocomplete="off" class="form-control" name="box2" placeholder="Exams" type="number">
+            <input autocomplete="off" class="form-control" name="maths_exam" placeholder="Exams" type="number">
 
         </div>
-          <div class="input-group mb-3">
+
+
+<!--        eng-->
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text">Mathematics</span>
+                <span class="input-group-text">English</span>
             </div>
-            <input class="form-control" id="maths" name="" placeholder="Test" type="number" size="4" maxlength="30">
+            <input class="form-control" id="maths" name="eng_test" placeholder="Test" type="number" size="4" maxlength="30">
 
-            <input autocomplete="off" class="form-control" name="box2" placeholder="Exams" type="number">
+            <input autocomplete="off" class="form-control" name="eng_exam" placeholder="Exams" type="number">
 
         </div>
-          <div class="input-group mb-3">
+
+<!--        physics-->
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text">Mathematics</span>
+                <span class="input-group-text">Physics</span>
             </div>
-            <input class="form-control" id="maths" name="" placeholder="Test" type="number" size="4" maxlength="30">
+            <input class="form-control" id="maths" name="phy_test" placeholder="Test" type="number" size="4" maxlength="30">
 
-            <input autocomplete="off" class="form-control" name="box2" placeholder="Exams" type="number">
+            <input autocomplete="off" class="form-control" name="phy_exam" placeholder="Exams" type="number">
 
         </div>
-          <div class="input-group mb-3">
+
+<!--        Biology-->
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text">Mathematics</span>
+                <span class="input-group-text">Biology</span>
             </div>
-            <input class="form-control" id="maths" name="" placeholder="Test" type="number" size="4" maxlength="30">
+            <input class="form-control" id="maths" name="bio_test" placeholder="Test" type="number" size="4" maxlength="30">
 
-            <input autocomplete="off" class="form-control" name="box2" placeholder="Exams" type="number">
+            <input autocomplete="off" class="form-control" name="bio_exam" placeholder="Exams" type="number">
 
         </div>
-          <div class="input-group mb-3">
+
+<!--        Chemistry-->
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text">Mathematics</span>
+                <span class="input-group-text">Chemistry</span>
             </div>
-            <input class="form-control" id="maths" name="" placeholder="Test" type="number" size="4" maxlength="30">
+            <input class="form-control" id="maths" name="chem_test" placeholder="Test" type="number" size="4" maxlength="30">
 
-            <input autocomplete="off" class="form-control" name="box2" placeholder="Exams" type="number">
+            <input autocomplete="off" class="form-control" name="chem_exam" placeholder="Exams" type="number">
 
         </div>
-          <div class="input-group mb-3">
+
+
+<!--        Civic-->
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text">Mathematics</span>
+                <span class="input-group-text">Civic Education</span>
             </div>
-            <input class="form-control" id="maths" name="" placeholder="Test" type="number" size="4" maxlength="30">
+            <input class="form-control" id="maths" name="civic_test" placeholder="Test" type="number" size="4" maxlength="30">
 
-            <input autocomplete="off" class="form-control" name="box2" placeholder="Exams" type="number">
+            <input autocomplete="off" class="form-control" name="civic_exam" placeholder="Exams" type="number">
 
         </div>
 
-           <div class="input-group mb-3">
+<!--        Agric-->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Agric</span>
+            </div>
+            <input class="form-control" id="maths" name="agric_test" placeholder="Test" type="number" size="4" maxlength="30">
+
+            <input autocomplete="off" class="form-control" name="agric_exam" placeholder="Exams" type="number">
+
+        </div>
+
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">Comment</span>
             </div>
 
-            <input autocomplete="off" class="form-control" name="box2" placeholder="Teachers Comment" type="text">
+            <input autocomplete="off" class="form-control" name="comment" placeholder="Teachers Comment" type="text">
 
         </div>
 
-   <input type="submit" class="form-control">
+       <input type="submit" class="form-control"  id="btn">
+
 
     </form>
 
