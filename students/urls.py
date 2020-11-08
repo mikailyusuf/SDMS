@@ -9,5 +9,6 @@ urlpatterns = [
     path('home/', views.home,name = 'home'),
     path('signout', views.signout,name = 'signout'),
     path('record', views.studentRecord,name = 'record'),
+    path('search', views.StudentsFilter,name = 'search'),
 
 ]

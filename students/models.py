@@ -13,7 +13,7 @@ class Students(models.Model):
     profile_pic = models.ImageField(null=True,blank=True)
 
     def __str__(self):
-        return self.email
+        return self.first_name + "" + self.last_name
 
 
 class Teachers(models.Model):
@@ -44,50 +44,53 @@ class Results(models.Model):
         ('2020/2021', '2020/2021'),
         ('2021/2022', '2021/2022'),
     )
-    term = models.CharField(max_length=100, choices=TERM)
-    session = models.CharField(max_length=100, choices=SESSION)
+    term = models.CharField(max_length=100, null=True)
+    session = models.CharField(max_length=100, null=True)
 
 
-    math_exan = models.FloatField(null=True)
+    math_exam = models.FloatField(null=True)
     math_test = models.FloatField(null=True)
     math_total = models.FloatField(null=True)
     math_grade = models.CharField(max_length=10,null=False)
 
-    eng_exan = models.FloatField(null=True)
+    eng_exam = models.FloatField(null=True)
     eng_test = models.FloatField(null=True)
     eng_total = models.FloatField(null=True)
     eng_grade = models.CharField(max_length=10,null=False)
 
 
 
-    physics_exan = models.FloatField(null=True)
+    physics_exam = models.FloatField(null=True)
     physics_test = models.FloatField(null=True)
     physics_total = models.FloatField(null=True)
     physics_grade = models.CharField(max_length=10,null=False)
 
 
-    bio_exan = models.FloatField(null=True)
+    bio_exam = models.FloatField(null=True)
     bio_test = models.FloatField(null=True)
     bio_total = models.FloatField(null=True)
     bio_grade = models.CharField(max_length=10,null=False)
 
 
-    chem_exan = models.FloatField(null=True)
+    chem_exam = models.FloatField(null=True)
     chem_test = models.FloatField(null=True)
     chem_total = models.FloatField(null=True)
     chem_grade = models.CharField(max_length=10,null=False)
 
 
-    agric_exan = models.FloatField(null=True)
+    agric_exam = models.FloatField(null=True)
     agric_test = models.FloatField(null=True)
     agric_total = models.FloatField(null=True)
     agric_grade = models.CharField(max_length=10,null=False)
 
 
-    civic_exan = models.FloatField(null=True)
+    civic_exam = models.FloatField(null=True)
     civic_test = models.FloatField(null=True)
     civic_total = models.FloatField(null=True)
     civic_grade = models.CharField(max_length=10,null=False)
 
     comment = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+
+    def __str__(self):
+        return  self.date_created
